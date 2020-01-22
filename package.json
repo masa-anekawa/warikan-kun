@@ -15,6 +15,7 @@
     "babel-loader": "^8.0.6",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "prop-types": "^15.7.2",
+    "watch": "^1.0.2",
     "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.10.1"
@@ -22,7 +23,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack --mode development web/src/index.js --output ./web/static/web/main.js",
-    "build": "webpack --mode production web/src/index.js --output ./web/static/web/main.js"
+    "build": "webpack --mode production web/src/index.js --output ./web/static/web/main.js",
+    "watch": "watch \"npm run dev\" ./web/src/"
   },
   "repository": {
     "type": "git",
