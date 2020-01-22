@@ -134,3 +134,6 @@ dmypy.json
 # django SECRET
 settings_local.py
 
+# node
+node_modules/
+
