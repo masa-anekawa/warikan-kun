@@ -137,3 +137,6 @@ settings_local.py
 # node
 node_modules/
 
+# warikan-kun specific files
+web/static/web/
+
