@@ -1,7 +1,7 @@
 from django.contrib.auth.models import User, Group
 from rest_framework import viewsets
 
-from .serializers import UserSerializer, GroupSerializer, PaymentSerializer
+from .serializers import UserSerializer, GroupSerializer, ConsumerSerializer, PaymentSerializer
 from .models import Payment
 
 
@@ -24,3 +24,8 @@ class GroupViewSet(viewsets.ModelViewSet):
 class PaymentViewSet(viewsets.ModelViewSet):
     queryset = Payment.objects.all()
     serializer_class = PaymentSerializer
+
+
+class ConsumerViewSet(viewsets.ModelViewSet):
+    queryset = Group.objects.get(name='consumer').user_set.all()
+    serializer_class = ConsumerSerializer

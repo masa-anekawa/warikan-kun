@@ -9,6 +9,12 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
         fields = ['url', 'username', 'email', 'groups', 'payments', 'treats']
 
 
+class ConsumerSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = User
+        fields = ['id', 'username']
+
+
 class GroupSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Group
@@ -16,7 +22,7 @@ class GroupSerializer(serializers.HyperlinkedModelSerializer):
 
 
 class PaymentSerializer(serializers.ModelSerializer):
-    # paid_by = UserSerializer(read_only=True)
+    paid_by = ConsumerSerializer(read_only=True)
     # paid_for = UserSerializer(read_only=True)
 
     class Meta:
